@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+
+  <style>
+    #header {
+      background-image: url('https://s3.eu-west-3.amazonaws.com/sport-finder.image/images/cache/full_hd/zone/bruxelles.jpeg');
+    }
+
+
+    .container {
+      display: flex;
+    }
+
+    .cards {
+      flex: 3;
+      height: 600px;
+      overflow: scroll;
+      padding: 10px;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      text-align: left;
+      float: right;
+      border: 1px solid rgba(0, 0, 0, .125);
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #e3e3e3;
+      background-clip: border-box;
+      border: 1px solid rgba(0, 0, 0, .125);
+      border-radius: .25rem;
+      margin: 2px;
+      margin-top: 5px;
+
+    }
+
+    .container-map {
+      background-color: #f95;
+      flex: 7;
+      height: 600px;
+    }
+
+    .button-info {
+      border: 1px solid rgba(0, 0, 0, .125);
+      background-color: #45e3ff;
+      color: #212529;
+      padding: 5px;
+      margin: 15px auto;
+      width: 80%;
+    }
+    .img-card{
+      width: 98%;
+      margin: 5px;
+
+    }
+    .text-center{
+      
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="app">
+
+    <div class="content bg-darken">
+      <div class="container">
+
+        <!-- start cards-->
+        <div class="cards">
+
+          <!-- start card-->
+          <div class="card">
+            <div class="text-center">
+              <img class="img-card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Denver_Colorado_Invesco_Field_at_Mile_High.jpg/1200px-Denver_Colorado_Invesco_Field_at_Mile_High.jpg"   alt="">
+              <h2>List of sports centers</h2>
+            </div>
+            <button class="button-info" type="button" name="button"> info+</button>
+          </div>
+          <!-- start end-->
+          <!-- start card-->
+          <div class="card">
+            <div class="text-center">
+              <img class="img-card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Denver_Colorado_Invesco_Field_at_Mile_High.jpg/1200px-Denver_Colorado_Invesco_Field_at_Mile_High.jpg"   alt="">
+              <h2>List of sports centers</h2>
+            </div>
+            <button class="button-info" type="button" name="button"> info+</button>
+          </div>
+          <!-- start end-->
+
+          <!-- start card-->
+          <div class="card">
+            <div class="text-center">
+              <img class="img-card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Denver_Colorado_Invesco_Field_at_Mile_High.jpg/1200px-Denver_Colorado_Invesco_Field_at_Mile_High.jpg"   alt="">
+              <h2>List of sports centers</h2>
+            </div>
+            <button class="button-info" type="button" name="button"> info+</button>
+          </div>
+          <!-- start end-->
+
+
+
+
+
+        </div>
+        <!-- end cards-->
+
+        <div class="container-map"></div>
+      </div>
+    </div>
+
+</body>
+
+</html>
