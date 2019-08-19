@@ -19,15 +19,13 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-
     };
   }
 
   render() {
     return (
       <Router>
-        <Header/>
-      <div>
+       <div>
       <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/Information" component={Information} />

@@ -1,0 +1,106 @@
+
+    * {
+        box-sizing: border-box;
+       }
+       h1 {
+        font-size: 67px;
+        color: #354d72;
+        font-family: Cervo,Helvetica,Arial,sans-serif;
+        text-align: center
+       }
+   
+       h2 {
+        font-weight: 400;
+        font-family: Cervo,Helvetica,Arial,sans-serif;
+        margin-top: 1rem;
+        text-align: center;
+       }
+   
+       p{
+        text-align: center;
+        font-family:'Times New Roman', Times, serif;
+        text-align: justify;
+        font-size: 10px;
+       }
+   
+       .intro{
+        display: block;
+        width:40%;
+        margin-left: auto;
+        margin-right: auto; 
+        
+       }
+   
+       .container {
+        display: flex;
+       }
+   
+       hr{
+        width:40%;
+       } 
+   
+       .mySlides{
+        display:none
+       }
+       .w3-left, .w3-right, .w3-badge {
+        cursor:pointer
+       }
+       .w3-badge{
+         height:13px;width:13px;padding:0
+       }
+       .btn{
+         display: inline-block;
+       }
+   
+       body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: auto;
+        margin-left:  auto;
+        max-width: 960px;
+        padding-right: 10px;
+        padding-left:  10px;
+       }
+   
+       /* Float four columns side by side */
+       .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+        }
+   
+       /* Remove extra left and right margins, due to padding */
+       .row {
+         margin: 0 -5px;
+       }
+   
+       /* Clear floats after the columns */
+       .row:after {
+       content: "";
+       display: table;
+       clear: both;
+       }
+   
+       /* Responsive columns */
+     @media screen and (max-width: 600px) {
+       .column {
+       width: 100%;
+       display: block;
+       margin-bottom: 20px;
+       }
+     }
+   
+      /* Style the counter cards */
+      .card {
+       width: 100%;
+       display: block;
+       height: 200px;
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+       padding: 16px;
+       text-align: center;
+       background-color: #f1f1f1;
+       flex-basis: auto;   
+       margin-right: 100;
+       margin-left: 100;
+       }
+
+   
