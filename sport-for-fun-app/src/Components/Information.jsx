@@ -1,6 +1,10 @@
 import React from 'react';
 import './Information.scss'
 
+import Details from './Information/Details';
+import Images from './Information/Images';
+import Description from './Information/Description';
+
 
  export default class Information extends React.Component {
 
@@ -14,8 +18,16 @@ import './Information.scss'
 
    render() {
      return (
-       <div>Information</div>
+       <div>
+       <Details/>
+       <Description/>
+       <Images/>
+       </div>
+       
      );
    }
 
  }
+
+ 
+ 
