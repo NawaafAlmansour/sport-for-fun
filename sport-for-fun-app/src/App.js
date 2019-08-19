@@ -25,22 +25,22 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Router>
-        <Header/>
       <div>
-      <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/Information" component={Information} />
-    <Route path="/MapGallery" component={MapGallery} />
-      <Route component={Home} />
-  </Switch>
+        <Router>
+        <div>
+        <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/Information" component={Information} />
+        <Route path="/MapGallery" component={MapGallery} />
+          <Route component={Home} />
+      </Switch>
+      </div>
+      {/*<FontAwesomeIcon icon={faAddressBook} size="md" >
+      </FontAwesomeIcon>*/}
+      <Footer/>
+
+    </Router>
   </div>
-  {/*<FontAwesomeIcon icon={faAddressBook} size="md" >
-  </FontAwesomeIcon>*/}
-  <Footer/>
-
-</Router>
-
     );
   }
 
