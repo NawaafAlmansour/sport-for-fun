@@ -19,7 +19,9 @@ const useStyles = makeStyles({
   },
 });
 
-function Cities() {
+function Cities(props) {
+  console.log(props);
+  
   const classes = useStyles();
       // const useStyles = makeStyles(theme => ({
       //   card: {
@@ -50,8 +52,8 @@ function Cities() {
                               <CardActionArea >
                                 <CardMedia
                                   className={classes.media}
-                                  image= "https://cdn3aleeli.daleeli.com/daleeli-CDN-backup/static/modules/uploads/cityguide/photos/english/225.jpg" 
-                                  title="Jeddah"
+                                  image= {props.city.default.cities[1].img}
+                                  title={props.city.default.cities[1].name}
                                 />
                                 <CardContent>
                                   <Typography gutterBottom variant="h5" component="h2" >
@@ -69,8 +71,8 @@ function Cities() {
                               <CardActionArea >
                                 <CardMedia
                                   className={classes.media}
-                                  image="http://www.arabnews.com/sites/default/files/styles/n_670_395/public/main-image/2018/04/08/1151021-1227194039.jpg?itok=mroK_eja"
-                                  title="Riyadh"
+                                  image={props.city.default.cities[0].img}
+                                  title={props.city.default.cities[0].name}
                                 />
                                 <CardContent>
                                   <Typography gutterBottom variant="h5" component="h2" >
@@ -88,8 +90,8 @@ function Cities() {
                               <CardActionArea >
                                 <CardMedia
                                   className={classes.media}
-                                  image="https://www.hiamag.com/sites/default/files/styles/ph2_960_600/public/article/12/11/2017/6180221-802360264.jpg" 
-                                  title="Abha"
+                                  image={props.city.default.cities[2].img}
+                                  title={props.city.default.cities[2].name}
                                 />
                                 <CardContent>
                                   <Typography gutterBottom variant="h5" component="h2" >
