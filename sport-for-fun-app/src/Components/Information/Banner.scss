@@ -1,0 +1,27 @@
+/* Inner */
+.inner {
+    margin: 0 auto;
+    width: 75rem;
+    max-width: calc(100% - 6rem); }
+    @media screen and (max-width: 480px) {
+      .inner {
+        max-width: calc(100% - 3rem); } }
+  
+  #banner {
+    align-items: center;
+    display: flex;
+    background-image: url("https://www.baptisthealthfoundation.org/wp-content/uploads/2017/09/bolo-bash-golf-feature-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 0;
+    min-height: 25rem;
+    border-radius: 0 0 85% 85% / 30%;
+  }
+  
+  h1 {
+    font-size: 67px;
+    color: #ffffffe0;
+    font-family: 'Dancing Script';
+    text-align: center;
+   }
