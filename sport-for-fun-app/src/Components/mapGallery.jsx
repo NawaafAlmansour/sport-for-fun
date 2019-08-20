@@ -1,10 +1,14 @@
 import React from 'react';
+
+import MapContainer from './MapContainer';
+
 import './mapGallery.scss'
 
 export default class MapGallery extends React.Component {
 
   constructor(props) {
     super(props);
+
 
     this.state = {
 
@@ -13,7 +17,13 @@ export default class MapGallery extends React.Component {
 
   render() {
     return (
-      <div>MapGallery</div>
+      <div>MapGallery
+
+        <MapContainer/>
+
+
+
+      </div>
     );
   }
 
