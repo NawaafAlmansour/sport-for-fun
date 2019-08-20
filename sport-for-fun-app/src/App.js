@@ -27,6 +27,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Router>
+          <Header/>
         <div>
         <Switch>
         <Route exact path="/" component={Home} />
