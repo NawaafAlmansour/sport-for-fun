@@ -47,62 +47,30 @@ function Cities(props) {
                       </div>
                   <div className="Cards">
 
-                    <Card className={ `Card  ${classes.card}`}>
-                          <div className="media">
-                              <CardActionArea >
-                                <CardMedia
-                                  className={classes.media}
-                                  image= {props.city.default.cities[1].img}
-                                  title={props.city.default.cities[1].name}
-                                />
-                                <CardContent>
-                                  <Typography gutterBottom variant="h5" component="h2" >
-                                      Jeddah
-                                  </Typography>
-                                  
-                                </CardContent>
-                              </CardActionArea>
-                          </div>
-                        
-                        </Card>
+                 
 
+                      
+                        
+                         {props.city.default.cities.map((cityx => 
                         <Card className={ `Card  ${classes.card}`}>
                           <div className="media">
                               <CardActionArea >
                                 <CardMedia
                                   className={classes.media}
-                                  image={props.city.default.cities[0].img}
-                                  title={props.city.default.cities[0].name}
+                                  key={cityx.id} 
+                                  image={cityx.img}
+                                  title={cityx.name}
                                 />
                                 <CardContent>
                                   <Typography gutterBottom variant="h5" component="h2" >
-                                      Riyadh
-                                  </Typography>
+                                  {cityx.Name}                                  </Typography>
                                   
                                 </CardContent>
                               </CardActionArea>
                           </div>
                         
                         </Card>
-
-                        <Card className={ `Card  ${classes.card}`}>
-                          <div className="media">
-                              <CardActionArea >
-                                <CardMedia
-                                  className={classes.media}
-                                  image={props.city.default.cities[2].img}
-                                  title={props.city.default.cities[2].name}
-                                />
-                                <CardContent>
-                                  <Typography gutterBottom variant="h5" component="h2" >
-                                      Abha
-                                  </Typography>
-                                  
-                                </CardContent>
-                              </CardActionArea>
-                          </div>
-                        
-                        </Card>
+                        ))}
                </div>
                </div>
               );
