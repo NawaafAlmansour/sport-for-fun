@@ -1,58 +1,112 @@
 import React from 'react';
-import './Details.scss'
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import PhoneIcon from '@material-ui/icons/Phone';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import PersonPinIcon from '@material-ui/icons/PersonPin';
+import HelpIcon from '@material-ui/icons/Help';
+import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
+import ThumbDown from '@material-ui/icons/ThumbDown';
+import ThumbUp from '@material-ui/icons/ThumbUp';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
- export default class Details extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
+  return (
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`scrollable-force-tabpanel-${index}`}
+      aria-labelledby={`scrollable-force-tab-${index}`}
+      {...other}
+    >
+      <Box p={3}>{children}</Box>
+    </Typography>
+  );
+}
 
-     };
-   }
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
 
-   
-   render() {
-     return (
-    
-      <div className="row">
-        <div className="column">
-          <div className="card">
-            <h2>Address</h2>
-            <p> P.O. Box 84329 </p>
-            <p> Riyadh 11671 </p>
-            <p> Kingdom of Saudi Arabia</p>
-            {/* <a className="btn" href="https://www.google.com/maps/place/%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+%D9%84%D9%84%D9%82%D9%88%D9%84%D9%81%E2%80%AD/@24.9591668,46.5781907,17z/data=!3m1!4b1!4m5!3m4!1s0x3e2eeb930999cc61:0xfa3dcc88ed2aea0d!8m2!3d24.9591668!4d46.576002"><i className="flaticon-map" />   Show in map</a> */}
-            {/* <button className="btn " onclick= {window.open('https://www.google.com/maps/place/%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+%D9%84%D9%84%D9%82%D9%88%D9%84%D9%81%E2%80%AD/@24.9591668,46.5781907,17z/data=!3m1!4b1!4m5!3m4!1s0x3e2eeb930999cc61:0xfa3dcc88ed2aea0d!8m2!3d24.9591668!4d46.576002')}>  <i className="flaticon-map" />   Show in map </button> */}
-            <button className="btn "><a target="_blank"className="btn" href="https://www.google.com/maps/place/%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+%D9%84%D9%84%D9%82%D9%88%D9%84%D9%81%E2%80%AD/@24.9591668,46.5781907,17z/data=!3m1!4b1!4m5!3m4!1s0x3e2eeb930999cc61:0xfa3dcc88ed2aea0d!8m2!3d24.9591668!4d46.576002"><i className="flaticon-map" />   Show in map</a> </button>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <h2>Opening Hours </h2>
-           
-            <button className="btn "> Show the calender</button>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <h2>Contact </h2>
-            <button className="btn "> <a href="tel:123-456-7890"> <i className="flaticon-phone" />  Click To Call</a> </button>
-            <button className="btn "><a target="_blank"className="btn" href="https://www.riyadhgolfcourses.com/"><i className="flaticon-map" />   Show Website</a> </button>
+function a11yProps(index) {
+  return {
+    id: `scrollable-force-tab-${index}`,
+    'aria-controls': `scrollable-force-tabpanel-${index}`,
+  };
+}
 
-          </div>
-        </div>
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    width: '100%',
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
 
-        <div className="column">
-          <div className="card">
-            <h2>visitors </h2>
+export default function ScrollableTabsButtonForce() {
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  function handleChange(event, newValue) {
+    setValue(newValue);
+  }
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="on"
+          indicatorColor="primary"
+          textColor="primary"
+          aria-label="scrollable force tabs example"
+        >
+          <Tab label="contact us" icon={<PhoneIcon />} {...a11yProps(0)} />
+          <Tab label="Comments" icon={<FavoriteIcon />} {...a11yProps(1)} />
+          <Tab label="Visitors" icon={<PersonPinIcon />} {...a11yProps(2)} />
+          <Tab label="Address" icon={<HelpIcon />} {...a11yProps(3)} />
+          <Tab label="Opening Hours" icon={<ShoppingBasket />} {...a11yProps(4)} />
+          <Tab label="Activityes" icon={<ThumbUp />} {...a11yProps(6)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel value={value} index={0}>
+      <p>
+         <a href="tel:123-456-7890" style={{textDecoration: 'none'}}>Click To Call</a>
+         <p></p>
+        <a href="https://www.riyadhgolfcourses.com/" style={{textDecoration: 'none'}}>Click To Show Website</a>
+      </p>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+      <p>Comments :</p>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
             <p> Male </p>
             <p> Female </p>
-            <p> Kids </p>
-          </div>
-        </div>
-      </div>
-     );
-   }
- }
+            <p> Kids</p>
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+           <p> P.O. Box 84329 </p>
+            <p> Riyadh 11671 </p>
+            <p> Kingdom of Saudi Arabia</p>
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+      <p> Item Five</p>
+      </TabPanel>
+      <TabPanel value={value} index={5}>
+      <p> Item Six</p>
+      </TabPanel>
 
- 
+    </div>
+  );
+}
