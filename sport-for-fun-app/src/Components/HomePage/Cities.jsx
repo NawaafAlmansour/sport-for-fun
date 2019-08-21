@@ -1,42 +1,10 @@
 import React from 'react';
+import './Cities.scss';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
-const images = [
-  {
-    url: 'http://www.arabnews.com/sites/default/files/styles/n_670_395/public/main-image/2018/04/08/1151021-1227194039.jpg?itok=mroK_eja',
-    title: 'Riyadh',
-    width: '33.33%',
-    
-  },
-  {
-    url: 'https://cdn3aleeli.daleeli.com/daleeli-CDN-backup/static/modules/uploads/cityguide/photos/english/225.jpg',
-    title: 'Jeddah',
-    width: '33.33%',
-  },
-  {
-    url: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Buraidah.jpg',
-    title: 'Qassim',
-    width: '33.33%',
-  },
-  {
-    url: 'https://blog.arabpx.com/wp-content/uploads/2018/12/2%D8%AA%D8%A8%D9%88%D9%83-%D8%A7%D9%84%D8%AF%D9%8A%D8%B3%D9%87-%D8%AF%D8%A7%D8%AE%D9%84-%D9%83%D9%83.jpg',
-    title: 'Hail',
-    width: '33.33%',
-  },
-  {
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8TRQkweOB92HZcWjXoNZiG7xSs2SjhV_6--0pRDB9GIhFOVPa',
-    title: 'Khobar',
-    width: '33.33%',
-  },
-  {
-    url: 'https://www.hiamag.com/sites/default/files/styles/ph2_960_600/public/article/12/11/2017/6180221-802360264.jpg',
-    title: 'Abha',
-    width: '33.33%',
-    
-  },
-];
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -111,15 +79,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ButtonBases() {
+export default function Cities(props) {
+
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      {images.map(image => (
+      {props.city.default.cities.map(image => (
         <ButtonBase
           focusRipple
-          key={image.title}
+          key={image.Name}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
@@ -129,7 +98,7 @@ export default function ButtonBases() {
           <span
             className={classes.imageSrc}
             style={{
-              backgroundImage: `url(${image.url})`,
+              backgroundImage: `url(${image.img})`,
             }}
           />
           <span className={classes.imageBackdrop} />
@@ -140,7 +109,7 @@ export default function ButtonBases() {
               color="inherit"
               className={classes.imageTitle}
             >
-              {image.title}
+              {image.Name}
               <span className={classes.imageMarked} />
             </Typography>
           </span>
