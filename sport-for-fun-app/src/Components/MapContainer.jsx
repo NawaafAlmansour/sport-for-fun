@@ -20,70 +20,73 @@ const REACT_APP_GOOGLE_KEY = "AIzaSyDYPz17vcUgHkZZ2qiyruUsIiMuFcRAGlg";
 
 
 
-function Map() {
-  const [selectedPark, setSelectedPark] = useState(null);
-
-  useEffect(() => {
-    const listener = e => {
-      if (e.key === "Escape") {
-        setSelectedPark(null);
-      }
-    };
-    window.addEventListener("keydown", listener);
-
-    return () => {
-      window.removeEventListener("keydown", listener);
-    };
-  }, []);
-// lat: parData.default.cities[1].lan , lng: parData.default.cities[1].lat
-  return (
-    <GoogleMap
-      defaultZoom={10}
-      defaultCenter={{ lat: parData.default.cities[1].lan , lng: parData.default.cities[1].lat}}
-      defaultOptions={{ styles: mapStyles }}
-    >
-      
-      {parData.default.cities[0].centers.map(park => (
-        <Marker
-           key={"park.properties.PARK_ID"}
-          position={{
-            lat: park.lan,
-            lng: park.lat
-          }}
-          onClick={() => {
-            setSelectedPark(park);
-          }}
-          icon={{
-            url: `./assets/pinmap.png`,
-             scaledSize: new window.google.maps.Size(30, 30)
-          }}
-        />
-      ))}
-
-      {selectedPark && (
-        <InfoWindow
-          onCloseClick={() => {
-            setSelectedPark(null);
-          }}
-          position={{
-            lat: selectedPark.lan,
-            lng: selectedPark.lat
-          }}
-        >
-          <div>
-            <h4>{selectedPark.centerName}</h4>
-            <p>{selectedPark.sportKind}</p>
-          </div>
-        </InfoWindow>
-      )}
-    </GoogleMap>
-  );
-}
 
 
- const MapWrapped = withScriptjs(withGoogleMap(Map));
 
-export default function MapContainer() {
+
+
+export default function MapContainer(props) {
+  function Map() {
+    const [selectedPark, setSelectedPark] = useState(null);
+  
+    useEffect(() => {
+      const listener = e => {
+        if (e.key === "Escape") {
+          setSelectedPark(null);
+        }
+      };
+      window.addEventListener("keydown", listener);
+  
+      return () => {
+        window.removeEventListener("keydown", listener);
+      };
+    }, []);
+  // lat: parData.default.cities[1].lan , lng: parData.default.cities[1].lat
+    return (
+      <GoogleMap
+        defaultZoom={10}
+        defaultCenter={{ lat: parData.default.cities[props.id].lan , lng: parData.default.cities[props.id].lat}}
+        defaultOptions={{ styles: mapStyles }}
+      >
+        
+        {parData.default.cities[0].centers.map(park => (
+          <Marker
+             key={"park.properties.PARK_ID"}
+            position={{
+              lat: park.lan,
+              lng: park.lat
+            }}
+            onClick={() => {
+              setSelectedPark(park);
+            }}
+            icon={{
+              url: `./assets/pinmap.png`,
+               scaledSize: new window.google.maps.Size(30, 30)
+            }}
+          />
+        ))}
+  
+        {selectedPark && (
+          <InfoWindow
+            onCloseClick={() => {
+              setSelectedPark(null);
+            }}
+            position={{
+              lat: selectedPark.lan,
+              lng: selectedPark.lat
+            }}
+          >
+            <div>
+              <h4>{selectedPark.centerName}</h4>
+              <p>{selectedPark.sportKind}</p>
+            </div>
+          </InfoWindow>
+        )}
+      </GoogleMap>
+    );
+  }
+  const MapWrapped = withScriptjs(withGoogleMap(Map));
+  console.log(props)
   return (
     <div className="MapContainer">
       <MapWrapped

@@ -19,11 +19,12 @@ export default class Home extends React.Component {
   }
 
   render() {
+   
       return (
         <div> 
      <HeaderImage/>
      <div className="cities">
-       <Cities city={city} />
+       <Cities city={city} changeCity = {this.props.changeCity} />
        </div>
          </div> 
          );

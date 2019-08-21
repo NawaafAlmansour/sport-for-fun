@@ -82,20 +82,17 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function sayhello (){
-console.log("pass")
 
-}
 console.log(city.default.cities)
 export default function Cities(props) {
-
+  console.log(props.changeCity)
   const classes = useStyles();
 
 
  
   return (
     <div className={classes.root}>
-      {props.city.default.cities.map(image => (
+      {props.city.default.cities.map((image , i) => (
         <ButtonBase
           focusRipple
           key={image.Name}
@@ -122,8 +119,8 @@ export default function Cities(props) {
               color="inherit"
               className={classes.imageTitle}
             >
-          <Route path="/mapGallery" render={props => <MapGallery  sayhello = {sayhello}/>} />
-               <Link to="/mapGallery">{image.Name}</Link>
+          <Route path="/mapGallery" render={props => <MapGallery  />} />
+               <Link to="/mapGallery"><div  onClick = {props.changeCity} id = {i}>{image.Name}</div></Link>
                
               <span className={classes.imageMarked} />
             </Typography>

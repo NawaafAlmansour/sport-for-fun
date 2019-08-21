@@ -15,7 +15,7 @@ export default class MapGallery extends React.Component {
 
   render() {
     console.log(city.default.cities)
-    console.log(this.props.id)
+    console.log("aiha " + this.props.id)
 
     // this.props.changeCity()
     return (
@@ -23,10 +23,10 @@ export default class MapGallery extends React.Component {
 
         <div className="contener">
           <div className="mapcard">
-            <CardsMap id = {this.props.id}/>
+            <CardsMap id1 = {this.props.id}/>
           </div>
             <div className="map">
-              <MapContainer id = {this.props.id} />
+              <MapContainer id = {this.props.id} name={"marc"} />
             </div>
 
           </div>

@@ -19,12 +19,15 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      idCity :1,
+      idCity :0,
+
     };
   }
-changeCity =()=>{
-console.log("pass aaaa")
-
+changeCity =(e)=>{
+console.log(e.target.id)
+this.setState({
+  idCity : e.target.id
+})
 }
   render() {
     return (
@@ -35,13 +38,15 @@ console.log("pass aaaa")
         <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/Information" component={Information} />
-        {/* <Route path="/MapGallery" component={MapGallery} /> */}
+         {/* <Route path="/MapGallery" component={MapGallery} />  */}
         <Route path="/MapGallery" render={props => <MapGallery changeCity = {this.changeCity} id = {this.state.idCity} />} />
-          <Route component={Home} />
+        <Route path="/home" render={props => <Home changeCity = {this.changeCity} id = {this.state.idCity} />} />
+
+          {/* <Route render = {props => <Home changeCity = {this.changeCity} id = {this.state.idCity} />} /> */}
       </Switch>
       </div>
-      {/*<FontAwesomeIcon icon={faAddressBook} size="md" >
-      </FontAwesomeIcon>*/}
+      {/* <FontAwesomeIcon icon={faAddressBook} size="md" >
+      </FontAwesomeIcon> */}
       <Footer/>
 
     </HashRouter>
