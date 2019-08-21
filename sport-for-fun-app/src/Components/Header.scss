@@ -1,0 +1,10 @@
+@import './color';
+
+.site-header{
+  height: 120px;
+  position: absolute;
+    right: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: $color-bluedark;
+  }
