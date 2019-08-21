@@ -23,18 +23,6 @@ function Cities(props) {
   console.log(props);
   
   const classes = useStyles();
-      // const useStyles = makeStyles(theme => ({
-      //   card: {
-      //     maxWidth: 345,
-      //   },
-      //   media: {
-      //     height: 0,
-      //     paddingTop: '56.25%'}
-      //   }));
-
-       
-
-
                return (
                  <div>
                <div>
