@@ -27,7 +27,8 @@ export default class Footer extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-sm-6 col-xs-12">
-            <p className="copyright-text">NAH! © 2019  </p>
+            <p className="copyright-text">NAH!© 2019 </p>
+            
               <p className="copyright-text">
                 <a href="https://github.com/AishaAlshuraim/sport-for-fun/tree/master/sport-for-fun-app">github</a>
               </p>
