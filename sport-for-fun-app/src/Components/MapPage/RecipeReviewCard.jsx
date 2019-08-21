@@ -39,7 +39,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
+  console.log(props);
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -56,15 +58,16 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
+        title={props.name}
+        subheader={props.kind}
+
       />
       <CardMedia
         className={classes.media}
-        image="https://s3.eu-west-3.amazonaws.com/sport-finder.image/images/cache/full_hd/center/arena-wavre.jpeg"
-        title="Paella dish"
+        image={props.image}
       />
       <CardContent>
-      
+
       </CardContent>
     <IconLabelButtons/>
       <CardActions disableSpacing>

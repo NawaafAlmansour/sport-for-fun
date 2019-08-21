@@ -12,8 +12,8 @@ import {
 import * as parkData from "./data/skateboard-parks.json";
 import * as parData from  "./HomePage/CityDB.json";
 import mapStyles from "./MapPage/mapStyles";
-console.log(parData.default.cities[0].centers[0].lan);
-console.log(parData.default.cities[0].centers[0].lat);
+// console.log(parData.default.cities[0].centers[0].lan);
+// console.log(parData.default.cities[0].centers[0].lat);
 
 
 const REACT_APP_GOOGLE_KEY = "AIzaSyDYPz17vcUgHkZZ2qiyruUsIiMuFcRAGlg";
@@ -38,7 +38,7 @@ function Map() {
   return (
     <GoogleMap
       defaultZoom={10}
-      defaultCenter={{ lat: 45.4211, lng: -75.6903 }}
+      defaultCenter={{ lat: 24.813796, lng: 46.743962 }}
       defaultOptions={{ styles: mapStyles }}
     >
       {parData.default.cities[0].centers.map(park => (
@@ -53,7 +53,7 @@ function Map() {
           }}
           icon={{
             url: `./assets/pinmap.png`,
-             scaledSize: new window.google.maps.Size(25, 25)
+             scaledSize: new window.google.maps.Size(30, 30)
           }}
         />
       ))}
@@ -64,13 +64,13 @@ function Map() {
             setSelectedPark(null);
           }}
           position={{
-            lat: selectedPark.geometry.coordinates[1],
-            lng: selectedPark.geometry.coordinates[0]
+            lat: selectedPark.lan,
+            lng: selectedPark.lat
           }}
         >
           <div>
-            <h2>{selectedPark.properties.NAME}</h2>
-            <p>{selectedPark.properties.DESCRIPTIO}</p>
+            <h4>{selectedPark.centerName}</h4>
+            <p>{selectedPark.sportKind}</p>
           </div>
         </InfoWindow>
       )}

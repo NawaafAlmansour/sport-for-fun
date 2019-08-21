@@ -73,11 +73,10 @@ export default function ScrollableTabsButtonForce() {
           aria-label="scrollable force tabs example"
         >
           <Tab label="contact us" icon={<PhoneIcon />} {...a11yProps(0)} />
-          <Tab label="Comments" icon={<FavoriteIcon />} {...a11yProps(1)} />
-          <Tab label="Visitors" icon={<PersonPinIcon />} {...a11yProps(2)} />
-          <Tab label="Address" icon={<HelpIcon />} {...a11yProps(3)} />
-          <Tab label="Opening Hours" icon={<ShoppingBasket />} {...a11yProps(4)} />
-          <Tab label="Activityes" icon={<ThumbUp />} {...a11yProps(6)} />
+          <Tab label="Comments" icon={<FavoriteIcon />} {...a11yProps(2)} />
+          <Tab label="Visitors" icon={<PersonPinIcon />} {...a11yProps(3)} />
+          <Tab label="Address" icon={<HelpIcon />} {...a11yProps(4)} />
+
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
