@@ -26,7 +26,7 @@ import * as parData from  "./HomePage/CityDB.json";
 
      };
    }
- 
+
 componentDidMount() {
   this.setState({
     description: parData.default.cities[0].centers[0].description,
