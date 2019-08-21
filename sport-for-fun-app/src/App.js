@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router,Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, HashRouter, Switch, Route } from 'react-router-dom'
 
 import Header from './Components/Header';
 import Home from './Components/Home';
@@ -29,7 +29,7 @@ console.log("pass aaaa")
   render() {
     return (
       <div>
-        <Router>
+        <HashRouter>
           <Header/>
         <div>
         <Switch>
@@ -44,7 +44,7 @@ console.log("pass aaaa")
       </FontAwesomeIcon>*/}
       <Footer/>
 
-    </Router>
+    </HashRouter>
   </div>
     );
   }
