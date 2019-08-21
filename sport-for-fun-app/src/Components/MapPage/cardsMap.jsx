@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import RecipeReviewCard from './RecipeReviewCard';
 import  './CardsMap.scss';
 
+import * as parData from  "../HomePage/CityDB.json";
+console.log(parData.default.cities[0].centers[0].sportKind);
 
 export default class CardsMap extends Component {
 
@@ -13,18 +15,21 @@ export default class CardsMap extends Component {
     };
   }
 
+
+
+
+
   render() {
     return (
       <div>
+        {parData.default.cities[0].centers.map(park => (
           <div className="card">
-          <RecipeReviewCard  />
-          </div>
-          <div className="card">
-          <RecipeReviewCard  />
-          </div>
-          <div className="card">
-          <RecipeReviewCard  />
-          </div>
+          <RecipeReviewCard
+             name={park.centerName}
+              image={park.images[0]}
+              kind={park.sportKind}/>
+        </div>
+        ))}
 
         </div>
     );
