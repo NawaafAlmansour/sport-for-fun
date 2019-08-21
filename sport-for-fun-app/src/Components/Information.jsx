@@ -10,12 +10,11 @@ import Description from './Information/Description';
 
    constructor(props) {
      super(props);
-
      this.state = {
 
      };
    }
-
+   
    render() {
      return (
        <div>
