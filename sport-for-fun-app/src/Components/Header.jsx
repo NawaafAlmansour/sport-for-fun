@@ -19,18 +19,9 @@ function Header() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit">
-            soprt
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <header className="site-header">
+            <img src="./assets/SportForFun.png" alt="logo" height="100" width="100"/> 
+      </header>
   );
 }
 export default Header;
