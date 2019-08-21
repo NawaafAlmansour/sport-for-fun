@@ -26,7 +26,7 @@ function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit">
-            Photos
+            soprt
           </Typography>
         </Toolbar>
       </AppBar>

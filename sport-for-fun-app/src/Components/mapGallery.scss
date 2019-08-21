@@ -1,0 +1,23 @@
+.contener{
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 380px 1fr;
+}
+
+
+.map{
+   margin: 10px;
+   width: 60vw;
+   height:90vh;
+ }
+
+.mapcard{
+    width: 100%;
+    margin: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    height:90vh;
+    overflow: auto;
+}
