@@ -16,14 +16,7 @@ import * as parData from  "./HomePage/CityDB.json";
 
      };
    }
-   {parData.default.cities[0].centers.map(park => (
-     <div className="card">
-     <RecipeReviewCard
-        name={park.centerName}
-         image={park.images[0]}
-         kind={park.sportKind}/>
-   </div>
-   ))}
+ 
 
    render() {
      return (

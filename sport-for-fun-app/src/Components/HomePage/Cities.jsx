@@ -3,8 +3,10 @@ import './Cities.scss';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-
-
+import { BrowserRouter as Router,Switch, Route } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import MapGallery from '../mapGallery';
+import * as city from '../HomePage/CityDB.json';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,6 +14,7 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
+    cityId :1,
   },
   image: {
     position: 'relative',
@@ -79,10 +82,17 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+function sayhello (){
+console.log("pass")
+
+}
+console.log(city.default.cities)
 export default function Cities(props) {
 
   const classes = useStyles();
 
+
+ 
   return (
     <div className={classes.root}>
       {props.city.default.cities.map(image => (
@@ -95,6 +105,9 @@ export default function Cities(props) {
             width: image.width,
           }}
         >
+         
+                  {/* */}
+
           <span
             className={classes.imageSrc}
             style={{
@@ -109,7 +122,9 @@ export default function Cities(props) {
               color="inherit"
               className={classes.imageTitle}
             >
-              {image.Name}
+          <Route path="/mapGallery" render={props => <MapGallery  sayhello = {sayhello}/>} />
+               <Link to="/mapGallery">{image.Name}</Link>
+               
               <span className={classes.imageMarked} />
             </Typography>
           </span>

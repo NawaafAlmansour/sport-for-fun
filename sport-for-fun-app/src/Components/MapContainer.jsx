@@ -9,7 +9,7 @@ import {
   InfoWindow
 } from "react-google-maps";
 
-import * as parkData from "./data/skateboard-parks.json";
+// import * as parkData from "./data/skateboard-parks.json";
 import * as parData from  "./HomePage/CityDB.json";
 import mapStyles from "./MapPage/mapStyles";
 // console.log(parData.default.cities[0].centers[0].lan);
@@ -17,6 +17,7 @@ import mapStyles from "./MapPage/mapStyles";
 
 
 const REACT_APP_GOOGLE_KEY = "AIzaSyDYPz17vcUgHkZZ2qiyruUsIiMuFcRAGlg";
+
 
 
 function Map() {
@@ -34,13 +35,14 @@ function Map() {
       window.removeEventListener("keydown", listener);
     };
   }, []);
-
+// lat: parData.default.cities[1].lan , lng: parData.default.cities[1].lat
   return (
     <GoogleMap
       defaultZoom={10}
-      defaultCenter={{ lat: 24.813796, lng: 46.743962 }}
+      defaultCenter={{ lat: parData.default.cities[1].lan , lng: parData.default.cities[1].lat}}
       defaultOptions={{ styles: mapStyles }}
     >
+      
       {parData.default.cities[0].centers.map(park => (
         <Marker
            key={"park.properties.PARK_ID"}

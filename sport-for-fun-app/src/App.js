@@ -19,9 +19,13 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
+      idCity :1,
     };
   }
+changeCity =()=>{
+console.log("pass aaaa")
 
+}
   render() {
     return (
       <div>
@@ -31,7 +35,8 @@ export default class App extends React.Component {
         <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/Information" component={Information} />
-        <Route path="/MapGallery" component={MapGallery} />
+        {/* <Route path="/MapGallery" component={MapGallery} /> */}
+        <Route path="/MapGallery" render={props => <MapGallery changeCity = {this.changeCity} id = {this.state.idCity} />} />
           <Route component={Home} />
       </Switch>
       </div>
