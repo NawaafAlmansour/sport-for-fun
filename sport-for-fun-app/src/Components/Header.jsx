@@ -5,7 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import './Header.scss'
+// src/Components/Header.scss
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -20,7 +21,7 @@ function Header() {
 
   return (
     <header className="site-header">
-            <img src="./assets/SportForFun.png" alt="logo" height="100" width="100"/> 
+            <img src="./assets/SportForFun.png" alt="logo" height="100" width="100"/>
       </header>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router,Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, HashRouter, Switch, Route } from 'react-router-dom'
 
 import Header from './Components/Header';
 import Home from './Components/Home';
@@ -19,27 +19,37 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
+      idCity :0,
+
     };
   }
-
+changeCity =(e)=>{
+console.log(e.target.id)
+this.setState({
+  idCity : e.target.id
+})
+}
   render() {
     return (
       <div>
-        <Router>
+        <HashRouter>
           <Header/>
         <div>
         <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/Information" component={Information} />
-        <Route path="/MapGallery" component={MapGallery} />
-          <Route component={Home} />
+         {/* <Route path="/MapGallery" component={MapGallery} />  */}
+        <Route path="/MapGallery" render={props => <MapGallery changeCity = {this.changeCity} id = {this.state.idCity} />} />
+        <Route path="/home" render={props => <Home changeCity = {this.changeCity} id = {this.state.idCity} />} />
+
+          {/* <Route render = {props => <Home changeCity = {this.changeCity} id = {this.state.idCity} />} /> */}
       </Switch>
       </div>
-      {/*<FontAwesomeIcon icon={faAddressBook} size="md" >
-      </FontAwesomeIcon>*/}
+      {/* <FontAwesomeIcon icon={faAddressBook} size="md" >
+      </FontAwesomeIcon> */}
       <Footer/>
 
-    </Router>
+    </HashRouter>
   </div>
     );
   }
