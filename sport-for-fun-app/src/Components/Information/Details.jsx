@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ScrollableTabsButtonForce() {
+export default function Details(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -76,34 +76,34 @@ export default function ScrollableTabsButtonForce() {
           <Tab label="Comments" icon={<FavoriteIcon />} {...a11yProps(2)} />
           <Tab label="Visitors" icon={<PersonPinIcon />} {...a11yProps(3)} />
           <Tab label="Address" icon={<HelpIcon />} {...a11yProps(4)} />
+            <Tab label="Opening Hours" icon={<ShoppingBasket />} {...a11yProps(4)} />
+          <Tab label="Activityes" icon={<ThumbUp />} {...a11yProps(6)} />
 
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
       <p>
-         <a href="tel:123-456-7890" style={{textDecoration: 'none'}}>Click To Call</a>
+         <a href={`tel:${props.contact}`}style={{textDecoration: 'none'}}>{`Click To Call ${props.contact}`}</a>
          <p></p>
         <a href="https://www.riyadhgolfcourses.com/" style={{textDecoration: 'none'}}>Click To Show Website</a>
       </p>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <p>Comments :</p>
+      <p>{ props.comments}</p>
       </TabPanel>
       <TabPanel value={value} index={2}>
-            <p> Male </p>
-            <p> Female </p>
-            <p> Kids</p>
+          <p> {props.visitors} </p>
+
       </TabPanel>
       <TabPanel value={value} index={3}>
-           <p> P.O. Box 84329 </p>
-            <p> Riyadh 11671 </p>
-            <p> Kingdom of Saudi Arabia</p>
+           <p> {props.address} </p>
+
       </TabPanel>
       <TabPanel value={value} index={4}>
-      <p> Item Five</p>
+      <p> {props.openingHours}</p>
       </TabPanel>
       <TabPanel value={value} index={5}>
-      <p> Item Six</p>
+      <p> {props.activities}</p>
       </TabPanel>
 
     </div>
