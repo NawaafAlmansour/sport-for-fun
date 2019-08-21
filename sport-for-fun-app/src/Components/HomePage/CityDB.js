@@ -101,8 +101,25 @@ const CityDB = {
         "lan": 24.631034,
         "lat":46.716762,
     }
- 
-  
+
+    {
+      "Name": "Khobar",
+      "lan": 26.216130,
+      "lat":50.196630, 
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8TRQkweOB92HZcWjXoNZiG7xSs2SjhV_6--0pRDB9GIhFOVPa",  
+  },
+  {
+        "Name": "Hail",
+        "lan": 27.509935,
+        "lat":41.716053,   
+        "img": "https://blog.arabpx.com/wp-content/uploads/2018/12/2%D8%AA%D8%A8%D9%88%D9%83-%D8%A7%D9%84%D8%AF%D9%8A%D8%B3%D9%87-%D8%AF%D8%A7%D8%AE%D9%84-%D9%83%D9%83.jpg",
+    },
+    {
+      "Name": "Qassim",
+      "lan": 27.038817,
+      "lat":44.096032,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Buraidah.jpg",   
+  },
   ]
 }
 
