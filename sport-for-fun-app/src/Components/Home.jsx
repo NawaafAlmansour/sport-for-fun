@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.scss'
 import Cities from './HomePage/Cities'
 import HeaderImage from './HomePage/HeaderImage'
+import * as city from './HomePage/CityDB.json';
+ 
 
 export default class Home extends React.Component {
 
@@ -17,8 +19,8 @@ export default class Home extends React.Component {
       return (
         <div> 
      <HeaderImage/>
-     <div class="cities">
-       <Cities/>
+     <div className="cities">
+       <Cities city={city} />
        </div>
          </div> 
          );

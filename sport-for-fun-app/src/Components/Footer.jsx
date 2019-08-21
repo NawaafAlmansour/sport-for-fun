@@ -17,7 +17,7 @@ export default class Footer extends React.Component {
         <footer>
           Footer
         </footer>
-        <div class="footer-awards ">
+        <div className="footer-awards ">
         </div>
       </div>
     );
