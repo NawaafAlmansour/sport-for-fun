@@ -75,7 +75,7 @@ export default function RecipeReviewCard(props) {
 
       </CardContent>
 
-    <IconLabelButtons id={props.id}/>
+    <IconLabelButtons cityId={props.cityId} id={props.id}/>
 
 
       <CardActions disableSpacing>
