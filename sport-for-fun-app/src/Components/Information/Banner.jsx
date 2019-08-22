@@ -11,13 +11,13 @@ import './Banner.scss'
    }
    render() {
     return (
-      <section id="banner">
+      <section id="banner"
+        style ={ { backgroundImage: "url("+this.props.img1+")" } }>
+>
         <div className="inner">
-          <h1>Golf</h1>
+           <h1>{this.props.activities}</h1>
         </div>
       </section>
     );
   }
  }
-
- 

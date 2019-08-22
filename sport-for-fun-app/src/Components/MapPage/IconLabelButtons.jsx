@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import './IconLabelButtons.scss';
 
 
 const useStyles = makeStyles(theme => ({
@@ -12,13 +13,16 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-export default function IconLabelButtons() {
+export default function IconLabelButtons(props) {
   const classes = useStyles();
 
   return (
-    <div>
+
+    <div className="Buttons">
       <Button variant="contained" color="primary" className={classes.button}>
+      <a href={`#/Information/${props.id}/`}>
         info on the center +
+      </a>
         <addCircleOutline className={classes.rightIcon} />
       </Button>
     </div>
