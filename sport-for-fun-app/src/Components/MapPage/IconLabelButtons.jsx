@@ -20,7 +20,7 @@ export default function IconLabelButtons(props) {
 
     <div className="Buttons">
       <Button variant="contained" color="primary" className={classes.button}>
-      <a href={`#/Information/${props.id}/`}>
+      <a href={`#/Information/${props.cityId}/${props.id}/`}>
         info on the center +
       </a>
         <addCircleOutline className={classes.rightIcon} />

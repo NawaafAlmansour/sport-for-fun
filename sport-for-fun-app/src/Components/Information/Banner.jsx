@@ -15,7 +15,7 @@ import './Banner.scss'
         style ={ { backgroundImage: "url("+this.props.img1+")" } }>
 >
         <div className="inner">
-           <h1>{this.props.activities}</h1>
+           <h1>{this.props.sportKind}</h1>
         </div>
       </section>
     );

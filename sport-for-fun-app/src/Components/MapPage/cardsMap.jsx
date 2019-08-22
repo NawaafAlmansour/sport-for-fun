@@ -24,10 +24,11 @@ export default class CardsMap extends Component {
   render() {
     return (
       <div>
-        {parData.default.cities[0].centers.map((park , i)=> (
+        {parData.default.cities[this.props.id1].centers.map((park , i)=> (
           <div className="card">
           <RecipeReviewCard
             id={park.id}
+            cityId={this.props.id1}
             cinter={Cinter} changeCinter = {this.props.changeCinter}
              name={park.centerName}
               image={park.images[0]}

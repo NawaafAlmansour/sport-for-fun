@@ -40,7 +40,7 @@ this.setState({
         <div>
         <Switch>
         <Route exact path="/" render={props => <Home changeCity = {this.changeCity} id = {this.state.idCity} />} />
-        <Route path="/Information/:id" render={props => <Information {...props} changeCinter = {this.changeCity} />} />
+        <Route path="/Information/:city/:id" render={props => <Information {...props} changeCinter = {this.changeCity} />} />
          {/* <Route path="/MapGallery" component={MapGallery} />  */}
         <Route path="/MapGallery" render={props => <MapGallery changeCity = {this.changeCity} id = {this.state.idCity} />} />
         <Route path="/home" render={props => <Home changeCity = {this.changeCity} id = {this.state.idCity} />} />

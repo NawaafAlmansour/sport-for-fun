@@ -27,23 +27,26 @@ import * as cinter from  "./HomePage/CityDB.json";
        address:undefined,
        openingHours:undefined,
        activities:undefined,
+       BannerImg: undefined,
 
      };
    }
 
 componentDidMount() {
   this.setState({
-    description: cinter.default.cities[this.state.id].centers[this.state.id -1 ].description,
-    centerName: cinter.default.cities[this.state.id].centers[this.state.id -1].centerName,
-    img1:cinter.default.cities[this.state.id].centers[this.state.id -1].images[this.state.id] ,
-    img2:cinter.default.cities[this.state.id].centers[this.state.id -1].images[1] ,
-    img3:cinter.default.cities[this.state.id].centers[this.state.id -1].images[2] ,
-    contact: cinter.default.cities[this.state.id].centers[this.state.id -1].contact,
-    comments:cinter.default.cities[this.state.id].centers[this.state.id -1].comments,
-    visitors:cinter.default.cities[this.state.id].centers[this.state.id -1].visitors,
-    address:cinter.default.cities[this.state.id].centers[this.state.id -1].address,
-    openingHours:cinter.default.cities[this.state.id].centers[this.state.id -1].openingHours,
-    activities:cinter.default.cities[this.state.id].centers[this.state.id -1].activities,
+    description: cinter.default.cities[this.props.match.params.city].centers[this.state.id -1 ].description,
+    centerName: cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].centerName,
+    sportKind: cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].sportKind,
+    img1:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].images[0] ,
+    img2:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].images[1] ,
+    img3:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].images[2] ,
+    contact: cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].contact,
+    comments:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].comments,
+    visitors:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].visitors,
+    address:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].address,
+    openingHours:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].openingHours,
+    activities:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].activities,
+    BannerImg:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].BannerImg,
   });
 }
    render() {
@@ -51,8 +54,8 @@ componentDidMount() {
        return (
        <div>
         <Banner
-          img1={this.state.img1}
-          activities={this.state.activities}
+          img1={this.state.BannerImg}
+          sportKind={this.state.sportKind}
           />
           <div className="Image">
            <Slideshow
