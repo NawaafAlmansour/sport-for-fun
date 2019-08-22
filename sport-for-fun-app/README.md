@@ -1,6 +1,6 @@
 # Sport for Fun 
 
-![image](https://3.top4top.net/p_13299aga81.jpg)
+![image](https://3.top4top.net/p_13299aga81.jpg  =100x20)
 
 ## Table of contents
 * [Introduction](#Introduction)
