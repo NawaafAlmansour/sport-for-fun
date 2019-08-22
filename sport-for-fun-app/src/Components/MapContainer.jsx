@@ -9,12 +9,9 @@ import {
   InfoWindow
 } from "react-google-maps";
 
-// import * as parkData from "./data/skateboard-parks.json";
-import * as parData from  "./HomePage/CityDB.json";
+ import * as parData from  "./HomePage/CityDB.json";
 import mapStyles from "./MapPage/mapStyles";
-// console.log(parData.default.cities[0].centers[0].lan);
-// console.log(parData.default.cities[0].centers[0].lat);
-
+ 
 
 const REACT_APP_GOOGLE_KEY = "AIzaSyDYPz17vcUgHkZZ2qiyruUsIiMuFcRAGlg";
 
@@ -28,7 +25,7 @@ const REACT_APP_GOOGLE_KEY = "AIzaSyDYPz17vcUgHkZZ2qiyruUsIiMuFcRAGlg";
 export default function MapContainer(props) {
   function Map() {
     const [selectedPark, setSelectedPark] = useState(null);
-  
+
     useEffect(() => {
       const listener = e => {
         if (e.key === "Escape") {
@@ -36,7 +33,7 @@ export default function MapContainer(props) {
         }
       };
       window.addEventListener("keydown", listener);
-  
+
       return () => {
         window.removeEventListener("keydown", listener);
       };
@@ -45,13 +42,16 @@ export default function MapContainer(props) {
     return (
       <GoogleMap
         defaultZoom={10}
-        defaultCenter={{ lat: parData.default.cities[props.id].lan , lng: parData.default.cities[props.id].lat}}
+        defaultCenter={{
+          lat: parData.default.cities[props.id].lan ,
+          lng: parData.default.cities[props.id].lat
+        }}
         defaultOptions={{ styles: mapStyles }}
       >
-        
-        {parData.default.cities[0].centers.map(park => (
+
+        {parData.default.cities[props.id].centers.map(park => (
           <Marker
-             key={"park.properties.PARK_ID"}
+             key={park.id}
             position={{
               lat: park.lan,
               lng: park.lat
@@ -65,7 +65,7 @@ export default function MapContainer(props) {
             }}
           />
         ))}
-  
+
         {selectedPark && (
           <InfoWindow
             onCloseClick={() => {

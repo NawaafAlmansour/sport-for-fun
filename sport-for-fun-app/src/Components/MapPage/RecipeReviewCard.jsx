@@ -15,7 +15,12 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import IconLabelButtons from './IconLabelButtons'
+import IconLabelButtons from './IconLabelButtons';
+import { BrowserRouter as Router,Switch, Route } from 'react-router-dom';
+import {Link} from 'react-router-dom'
+import Information from '../Information';
+import * as Cinter from '../HomePage/CityDB.json';
+
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
@@ -69,7 +74,10 @@ export default function RecipeReviewCard(props) {
       <CardContent>
 
       </CardContent>
-    <IconLabelButtons/>
+
+    <IconLabelButtons id={props.id}/>
+
+
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />

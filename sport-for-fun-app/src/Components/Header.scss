@@ -1,10 +1,54 @@
 @import './color';
 
 .site-header{
-  height: 120px;
-  position: absolute;
+  height: 100px;
+  // position: absolute;
+  border-bottom: 8px solid $color-bluedark;
     right: 0;
-    z-index: 2;
+    // z-index: 2;
     width: 100%;
-    background-color: $color-bluedark;
-  }
+    background-color: linear-gradient(132deg, #628bbf, $color-bluedark);
+     position: relative;
+     /* Safari 4.0 - 8.0 */
+     -webkit-animation-name: example;
+     -webkit-animation-duration: 2s;
+     -webkit-animation-timing-function: linear;
+     -webkit-animation-delay: 1s;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-direction: alternate;
+     /* Standard syntax */
+     animation-name: example;
+     animation-duration: 2s;
+     animation-timing-function: linear;
+     animation-delay: 1s;
+     animation-iteration-count: infinite;
+     animation-direction: alternate;
+   }
+
+   /* Safari 4.0 - 8.0 */
+   @keyframes example {
+
+     0%   {background-image: linear-gradient(132deg, #c1dbfc, $color-bluedark); background-position: 0% 50%;}
+     25%  {background-image: linear-gradient(132deg, #7691e4, $color-bluedark); background-position: 100% 50%;}
+     50%  {background-image: linear-gradient(132deg,#1b2644, $color-bluedark); background-position: 0% 50%;}
+     75%   {background-image: linear-gradient(132deg, #7e7e7e, $color-bluedark); background-position: 100% 50%;}
+     100% {background-image: linear-gradient(132deg, #546190, $color-bluedark); background-position: 0% 50%;}
+   }
+
+
+
+   /* Standard syntax */
+   @keyframes example {
+     0%   {background-image: linear-gradient(132deg, #c1dbfc, $color-bluedark); left:0px; top:0px;}
+     25%  {background-image: linear-gradient(132deg, #7691e4, $color-bluedark); left:0px; top:0px;}
+     50%  {background-image: linear-gradient(132deg,#1b2644, $color-bluedark); left:0px; top:0px;}
+     75%   {background-image: linear-gradient(132deg, #7e7e7e, $color-bluedark); left:0px; top:0px;}
+     100% {background-image: linear-gradient(132deg, #546190, $color-bluedark); left:0px; top:0px;}
+   }
+
+
+.logo{
+  padding-left: 20px;
+  padding-top: 10px;
+  width: 90px;
+}

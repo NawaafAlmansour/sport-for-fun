@@ -20,13 +20,16 @@ export default class App extends React.Component {
 
     this.state = {
       idCity :0,
+      idCinter :0,
 
     };
   }
 changeCity =(e)=>{
-console.log(e.target.id)
+console.log("changeCity", e.target.id)
 this.setState({
-  idCity : e.target.id
+  idCity : e.target.id,
+  idCinter : e.target.id,
+
 })
 }
   render() {
@@ -36,8 +39,8 @@ this.setState({
           <Header/>
         <div>
         <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/Information" component={Information} />
+        <Route exact path="/" render={props => <Home changeCity = {this.changeCity} id = {this.state.idCity} />} />
+        <Route path="/Information/:id" render={props => <Information {...props} changeCinter = {this.changeCity} />} />
          {/* <Route path="/MapGallery" component={MapGallery} />  */}
         <Route path="/MapGallery" render={props => <MapGallery changeCity = {this.changeCity} id = {this.state.idCity} />} />
         <Route path="/home" render={props => <Home changeCity = {this.changeCity} id = {this.state.idCity} />} />

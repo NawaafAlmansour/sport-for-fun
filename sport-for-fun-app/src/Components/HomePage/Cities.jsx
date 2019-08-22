@@ -33,6 +33,8 @@ const useStyles = makeStyles(theme => ({
       },
       '& $imageTitle': {
         border: '4px solid currentColor',
+        borderRadius: `5px`,
+
       },
     },
   },
@@ -89,9 +91,13 @@ export default function Cities(props) {
   const classes = useStyles();
 
 
- 
+
   return (
-    <div className={classes.root}>
+    <div className="cities">
+      <div className="titel">
+        <h2>Discover the sport facilities in Saudi Arabia</h2>
+      </div>
+      <div className={classes.root}>
       {props.city.default.cities.map((image , i) => (
         <ButtonBase
           focusRipple
@@ -102,13 +108,14 @@ export default function Cities(props) {
             width: image.width,
           }}
         >
-         
+
                   {/* */}
 
           <span
             className={classes.imageSrc}
             style={{
               backgroundImage: `url(${image.img})`,
+              margin: `2px`,
             }}
           />
           <span className={classes.imageBackdrop} />
@@ -121,12 +128,13 @@ export default function Cities(props) {
             >
           <Route path="/mapGallery" render={props => <MapGallery  />} />
                <Link to="/mapGallery"><div  onClick = {props.changeCity} id = {i}>{image.Name}</div></Link>
-               
+
               <span className={classes.imageMarked} />
             </Typography>
           </span>
         </ButtonBase>
       ))}
+    </div>
     </div>
   );
 }
