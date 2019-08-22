@@ -12,12 +12,17 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-export default function IconLabelButtons() {
+export default function IconLabelButtons(props) {
   const classes = useStyles();
 
   return (
+
     <div>
       <Button variant="contained" color="primary" className={classes.button}>
+      <a href={`#/Information/${props.id}/`}>
+        info on the center +
+      </a>
+
         info on the center +
         <addCircleOutline className={classes.rightIcon} />
       </Button>

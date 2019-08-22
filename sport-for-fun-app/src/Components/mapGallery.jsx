@@ -3,7 +3,7 @@ import CardsMap from './MapPage/cardsMap';
 import MapContainer from './MapContainer';
 
 import './mapGallery.scss'
-import * as city from './HomePage/CityDB.json';
+// import * as city from './HomePage/CityDB.json';
 
 export default class MapGallery extends React.Component {
 
@@ -14,10 +14,7 @@ export default class MapGallery extends React.Component {
   }
 
   render() {
-    console.log(city.default.cities)
-    console.log("aiha " + this.props.id)
 
-    // this.props.changeCity()
     return (
       <div>
 

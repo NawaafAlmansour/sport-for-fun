@@ -21,7 +21,7 @@ function Header() {
 
   return (
     <header className="site-header">
-            <img src="./assets/SportForFun.png" alt="logo" height="100" width="100"/>
+            <img className="logo" src="./assets/SportForFun.png" alt="logo" />
       </header>
   );
 }
