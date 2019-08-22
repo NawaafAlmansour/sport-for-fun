@@ -88,7 +88,7 @@ export default function Details(props) {
       <p>
          <a href={`tel:${props.contact}`}style={{textDecoration: 'none'}}>{`Click To Call ${props.contact}`}</a>
          <p></p>
-        <a href="https://www.riyadhgolfcourses.com/" style={{textDecoration: 'none'}}>Click To Show Website</a>
+        <a href={props.website} style={{textDecoration: 'none'}}>Click To Show Website</a>
       </p>
       </TabPanel>
       <TabPanel value={value} index={1}>
