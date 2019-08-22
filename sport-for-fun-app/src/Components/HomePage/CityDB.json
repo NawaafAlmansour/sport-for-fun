@@ -209,7 +209,8 @@
           "contact": "0114812200",
           "comments":"Enjoyable horse riding with kids",
           "visitors":["Kids","Adults"],
-          "address":["P.O. Box 84329","Riyadh 11671","Kingdom of Saudi Arabia"],        "addressLink":"https://goo.gl/maps/APxqhg6MxWFqhTLq9",
+          "address":["P.O. Box 84329","Riyadh 11671","Kingdom of Saudi Arabia"],
+         "addressLink":"https://goo.gl/maps/APxqhg6MxWFqhTLq9",
           "openingHours":"8AM,8PM",
           "activities":"Horse riding"
           },
@@ -225,7 +226,8 @@
           "contact": "0114812240",
           "comments":"Good place for table tennis and other indoor stuff.",
           "visitors":["Kids","Adults"],
-          "address":["P.O. Box 84329","Riyadh 11671","Kingdom of Saudi Arabia"],        "addressLink":"https://goo.gl/maps/APxqhg6MxWFqhTLq9",
+          "address":["P.O. Box 84329","Riyadh 11671","Kingdom of Saudi Arabia"],
+          "addressLink":"https://goo.gl/maps/APxqhg6MxWFqhTLq9",
           "openingHours":"8AM,8PM",
           "activities":"Table Tennis"
           },

@@ -25,6 +25,7 @@ import * as cinter from  "./HomePage/CityDB.json";
        comments:undefined,
        visitors:undefined,
        address:undefined,
+       addressLink:undefined,
        openingHours:undefined,
        activities:undefined,
        BannerImg: undefined,
@@ -44,6 +45,7 @@ componentDidMount() {
     comments:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].comments,
     visitors:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].visitors,
     address:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].address,
+    addressLink:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].addressLink,
     openingHours:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].openingHours,
     activities:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].activities,
     BannerImg:cinter.default.cities[this.props.match.params.city].centers[this.state.id -1].BannerImg,
@@ -73,6 +75,7 @@ componentDidMount() {
              address={this.state.address}
              openingHours={this.state.openingHours}
              activities={this.state.activities}
+             addressLink={this.state.addressLink}
 
              />
           </div>
