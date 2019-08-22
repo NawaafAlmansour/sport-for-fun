@@ -33,17 +33,17 @@ import * as cinter from  "./HomePage/CityDB.json";
 
 componentDidMount() {
   this.setState({
-    description: cinter.default.cities[this.state.id].centers[this.state.id].description,
-    centerName: cinter.default.cities[this.state.id].centers[this.state.id].centerName,
-    img1:cinter.default.cities[this.state.id].centers[this.state.id].images[this.state.id] ,
-    img2:cinter.default.cities[this.state.id].centers[this.state.id].images[1] ,
-    img3:cinter.default.cities[this.state.id].centers[this.state.id].images[2] ,
-    contact: cinter.default.cities[this.state.id].centers[this.state.id].contact,
-    comments:cinter.default.cities[this.state.id].centers[this.state.id].comments,
-    visitors:cinter.default.cities[this.state.id].centers[this.state.id].visitors,
-    address:cinter.default.cities[this.state.id].centers[this.state.id].address,
-    openingHours:cinter.default.cities[this.state.id].centers[this.state.id].openingHours,
-    activities:cinter.default.cities[this.state.id].centers[this.state.id].activities,
+    description: cinter.default.cities[this.state.id].centers[this.state.id -1 ].description,
+    centerName: cinter.default.cities[this.state.id].centers[this.state.id -1].centerName,
+    img1:cinter.default.cities[this.state.id].centers[this.state.id -1].images[this.state.id] ,
+    img2:cinter.default.cities[this.state.id].centers[this.state.id -1].images[1] ,
+    img3:cinter.default.cities[this.state.id].centers[this.state.id -1].images[2] ,
+    contact: cinter.default.cities[this.state.id].centers[this.state.id -1].contact,
+    comments:cinter.default.cities[this.state.id].centers[this.state.id -1].comments,
+    visitors:cinter.default.cities[this.state.id].centers[this.state.id -1].visitors,
+    address:cinter.default.cities[this.state.id].centers[this.state.id -1].address,
+    openingHours:cinter.default.cities[this.state.id].centers[this.state.id -1].openingHours,
+    activities:cinter.default.cities[this.state.id].centers[this.state.id -1].activities,
   });
 }
    render() {
