@@ -19,6 +19,8 @@ Sport for Fun is an application which provides users aggregate information about
 ## Technologies
 * React 
 * Google Map API
+* Materal UX
+* Ajax 
 
 
 ## Screenshots:
@@ -50,10 +52,15 @@ Run server
 * Recorded video demo of your application to submit your project.[✓]
 
 ### Stretch Goals
-* Use more than 1 API 
+* Use more than 1 API [✓]
 * Save data to localstorage or firebase api (docs) with React (tutorial)
 * Build a Rails API Backend like the Misk API Example.
 * Use a React component library like Ant Design, Bootstrap React, or Material UI. [✓]
 * Use a CSS library like Bootstrap (tutorial). [✓]
 * Add User Sign Up, Sign In, and Sign Out with Firebase and React * Authentication (tutorial), alternative tutorial here (can be very challenging)
 
+
+# References:
+* create-react-app : https://reactjs.org/docs/getting-started.html 
+* MATERIAL-UI : https://material-ui.com/
+* Google Maps API : https://developers.google.com/maps/documentation/ 
