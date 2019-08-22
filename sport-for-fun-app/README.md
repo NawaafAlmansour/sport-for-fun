@@ -22,8 +22,7 @@ Sport for Fun is an application which provides users aggregate information about
 
 
 ## Screenshots:
-* Initial wireframe design
-* End design
+![image](https://3.top4top.net/p_1329iklp61.jpeg)
 
 
 ## Prerequisites
